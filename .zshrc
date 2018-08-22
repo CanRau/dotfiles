@@ -78,10 +78,11 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbo
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  extract
+  common-aliases
   zsh-autosuggestions
+  git
   yarn
+  extract
   doctl
   docker
   docker-compose
@@ -128,7 +129,8 @@ if [ -d $HOME/.shellrc/zshrc.d ]; then
 fi
 
 # Load all files from .shell/rc.d directory
-if [ -d $HOME/.shellrc/rc.d ]; then
+#if [ -d $HOME/.shellrc/rc.d ]; then
+if [ -n "$(ls -A $HOME/.shellrc/rc.d 2>/dev/null)" ]; then
   for file in $HOME/.shellrc/rc.d/*.sh; do
     source $file
   done
