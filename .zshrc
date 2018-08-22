@@ -14,6 +14,15 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=’red’
+
+# Advanced `vcs` color customization
+POWERLEVEL9K_VCS_CLEAN_FOREGROUND='blue'
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='black'
+POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='yellow'
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='black'
+POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='red'
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
+
 # Add a space in the first prompt
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
 
@@ -122,7 +131,8 @@ source $ZSH/oh-my-zsh.sh
 
 # from https://chr4.org/blog/2014/09/10/conf-dot-d-like-directories-for-zsh-slash-bash-dotfiles/
 # Load all files from .shell/zshrc.d directory
-if [ -d $HOME/.shellrc/zshrc.d ]; then
+#if [ -d $HOME/.shellrc/zshrc.d ]; then
+if [ -n "$(ls -A $HOME/.shellrc/zshrc.d 2>/dev/null)" ]; then
   for file in $HOME/.shellrc/zshrc.d/*.zsh; do
     source $file
   done
