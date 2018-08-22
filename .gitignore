@@ -1,0 +1,10 @@
+*
+!.bash*
+!.zsh*
+!.npmrc
+!.yarnrc
+!.gitignore
+!.gitignore_global
+!.gitconfig
+!.atom/*.cson
+!.babel.json
