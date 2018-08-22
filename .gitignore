@@ -8,3 +8,5 @@
 !.gitconfig
 !.atom/*.cson
 !.babel.json
+
+*history
