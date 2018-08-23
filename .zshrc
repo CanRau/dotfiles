@@ -131,18 +131,20 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # from https://chr4.org/blog/2014/09/10/conf-dot-d-like-directories-for-zsh-slash-bash-dotfiles/
-# Load all files from .shell/zshrc.d directory
-#if [ -d $HOME/.shellrc/zshrc.d ]; then
-if [ -n "$(ls -A $HOME/.shellrc/zshrc.d 2>/dev/null)" ]; then
-  for file in $HOME/.shellrc/zshrc.d/*.zsh; do
+# Load all files from .shell/rc.d directory
+#if [ -d $HOME/.shellrc/rc.d ]; then
+if [ -n "$(ls -A $HOME/.shellrc/rc.d 2>/dev/null)" ]; then
+  echo "sourcing rc.d"
+  for file in $HOME/.shellrc/rc.d/*.sh; do
     source $file
   done
 fi
 
-# Load all files from .shell/rc.d directory
-#if [ -d $HOME/.shellrc/rc.d ]; then
-if [ -n "$(ls -A $HOME/.shellrc/rc.d 2>/dev/null)" ]; then
-  for file in $HOME/.shellrc/rc.d/*.sh; do
+# Load all files from .shell/zshrc.d directory
+#if [ -d $HOME/.shellrc/zshrc.d ]; then
+if [ -n "$(ls -A $HOME/.shellrc/zshrc.d 2>/dev/null)" ]; then
+  echo "sourcing zshrc.d"
+  for file in $HOME/.shellrc/zshrc.d/*.zsh; do
     source $file
   done
 fi
