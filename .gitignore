@@ -8,8 +8,6 @@
 !.zshrc
 !.zshrc.pre-oh-my-zsh
 !/.shellrc/**
-!.npmrc
-!.yarnrc
 !.gitignore
 !.gitignore_global
 !.gitconfig
