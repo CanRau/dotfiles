@@ -9,8 +9,13 @@ export ZSH="/Users/Can/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+# add custom git work_in_progress segment
+POWERLEVEL9K_CUSTOM_GIT_WIP="echo $(work_in_progress)"
+POWERLEVEL9K_CUSTOM_GIT_WIP_BACKGROUND="red"
+POWERLEVEL9K_CUSTOM_GIT_WIP_FOREGROUND="yellow"
+
 # theme config
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs custom_git_wip)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=’red’
