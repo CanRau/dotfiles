@@ -18,11 +18,17 @@ alias glal='git log --decorate --graph --simplify-by-decoration --oneline --all'
 # does not work with globalias (yet)
 alias colorpallete='for code ({000..255}) print -P -- "$code: %F{$code}The quick brown fox jumps over the lazy dog%f"'
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/repo --work-tree=$HOME'
 alias d='dotfiles'
 alias da='dotfiles add'
-alias dss='dotfiles status --short'
+alias dss='dotfiles status --short --untracked-files=no'
 alias dapa='dotfiles add --patch'
 alias dc='dotfiles checkout'
 alias dcm='dotfiles commit --message'
 alias dp='dotfiles push'
+alias dd='dotfiles diff'
+compdef dotfiles=git
+compdef _git dotfiles d da
+
+# zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+# fpath=(~/.zsh $fpath)
