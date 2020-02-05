@@ -40,8 +40,3 @@ Thumbs.db
 # Node & NPM
 ############
 node_modules
-
-# ProcessWire assets & config #
-###############################
-#site*/assets
-#site*/config*
