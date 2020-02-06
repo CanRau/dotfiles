@@ -4,6 +4,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+#https://github.com/ohmyzsh/ohmyzsh/issues/7332
+export ZSH_COMPDUMP="${ZDOTDIR:-${ZSH}}/cache/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -164,3 +167,10 @@ fi
 echo "done";
 echoti clear;
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# The following lines were added by compinstall
+#zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+#zstyle :compinstall filename '/Users/Can/.zshrc'
+#autoload -Uz compinit
+#compinit
+# End of lines added by compinstall

@@ -1,10 +1,14 @@
+fpath=(~/.zsh/completions $fpath)
+# Autocompletion for git-friendly
+fpath=($(brew --prefix)/share/zsh/functions $fpath)
+
 # Caching autocompletion
 # https://blog.callstack.io/supercharge-your-terminal-with-zsh-8b369d689770
 autoload -Uz compinit
 if [[ -n ~/.shellrc/zshrc.d/.zcompdump(#qN.mh+24) ]]; then
-  compinit -i
+  compinit -i -d "${ZSH_COMPDUMP}" # based on https://unix.stackexchange.com/a/391670 not working tho
 else
-  compinit -C -i
+  compinit -C -i -d "${ZSH_COMPDUMP}" # based on https://unix.stackexchange.com/a/391670 not working tho
 fi
 
 # Menu-like autocompletion selection
@@ -29,7 +33,9 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 
-# Autocompletion for git-friendly
-fpath=($(brew --prefix)/share/zsh/functions $fpath)
+#zstyle ':completion:*:*:git:*' user-commands new-branch:'custom new branch function'
+#zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
+
 autoload -Uz _git && _git
 compdef __git_branch_names branch br

@@ -5,6 +5,8 @@ alias 'rmr=rm -r'
 
 # -------------------------------------------------------------------
 # Some custom git aliases
+# In addition to ZSHs git plugin
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh
 # -------------------------------------------------------------------
 alias git=hub
 alias gpr='hub pull-request'
@@ -18,7 +20,12 @@ alias glal='git log --decorate --graph --simplify-by-decoration --oneline --all'
 # does not work with globalias (yet)
 alias colorpallete='for code ({000..255}) print -P -- "$code: %F{$code}The quick brown fox jumps over the lazy dog%f"'
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/repo --work-tree=$HOME'
+# zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+# fpath=(~/.zsh $fpath)
+#setopt no_complete_aliases
+#setopt complete_aliases
+
+alias dotfiles='git --git-dir=$HOME/.dotfiles/repo --work-tree=$HOME'
 alias d='dotfiles'
 alias da='dotfiles add'
 alias dss='dotfiles status --short --untracked-files=no'
@@ -27,8 +34,6 @@ alias dc='dotfiles checkout'
 alias dcm='dotfiles commit --message'
 alias dp='dotfiles push'
 alias dd='dotfiles diff'
-compdef dotfiles=git
-compdef _git dotfiles d da
-
-# zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-# fpath=(~/.zsh $fpath)
+alias dlol='dotfiles log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"'
+compdef _git dotfiles=git d=git da=git-add dc=git-checkout
+compdef _git hub=git
