@@ -164,6 +164,9 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
+echo "sourcing iTerm Shell integration"
+source $HOME/.config/iTerm/iterm2_shell_integration.zsh
+
 echo "done";
 echoti clear;
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
