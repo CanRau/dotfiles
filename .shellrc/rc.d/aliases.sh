@@ -41,4 +41,3 @@ alias dp='dotfiles push'
 alias dd='dotfiles diff'
 alias dlol='dotfiles log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"'
 compdef _git dotfiles=git d=git da=git-add dc=git-checkout
-compdef _git hub=git
