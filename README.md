@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 http://inamidst.com/stuff/dotless/
 
 check for symlining https://github.com/dimafeng/dotfiles/blob/master/install.sh
@@ -48,3 +49,13 @@ https://github.com/denysdovhan/spaceship-prompt
  - React Developer Tools
  - Redux DevTools
  - Svelte Devtools
+=======
+Thinking about using [twpayne/chezmoi](https://github.com/twpayne/chezmoi) (or alternatively [SuperCuber/dotter](https://github.com/SuperCuber/dotter))  once I get to overhaul my dotfiles 🤓
+
+Benefits over other tools: 
+- single binary, which can be part of the dotfiles repo (no other dependencies needed)
+- templating
+- hooks / scripts  (chezmoi seems to provide more hooks)
+- Bitwarden & other password managers (chezmoi only)
+- Encryption (chezmoi only)
+>>>>>>> 8ba774d43b546c5cf9cca088cfc63135d748e937

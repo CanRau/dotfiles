@@ -5,11 +5,10 @@
 	helper = osxkeychain
 
 [core]
-	excludesfile = /Users/Can/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	quotepath = false
-	#editor = code --wait
-	editor = nano
-	#pager = subl
+	editor = code --wait
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -20,4 +19,29 @@
 	trustExitCode = true
 
 [include]
-      path = ~/.gitconfig_local
+	path = ~/.gitconfig_local
+
+
+# from https://github.com/sapegin/dotfiles/blob/master/tilde/gitconfig
+[push]
+	# When pushing code, always push only your current branch to a branch of the same name
+	default = current
+	followTags = true
+
+# not sure when or why I enabled auto rebasing? 
+#[branch]
+#	autosetuprebase = always
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
