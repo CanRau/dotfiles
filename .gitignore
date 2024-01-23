@@ -1,16 +1,16 @@
-*
-#!*/
-!.bash_aliases
-!.bash_functions
-!.bash_profile*
-!.bash_variables
-!.bashrc
-!.zshrc
-!.zshrc.pre-oh-my-zsh
-!/.shellrc/**
-!.gitignore
-!.gitignore_global
-!.gitconfig
-!.atom/*.cson
+# *
+# #!*/
+# !.bash_aliases
+# !.bash_functions
+# !.bash_profile*
+# !.bash_variables
+# !.bashrc
+# !.zshrc
+# !.zshrc.pre-oh-my-zsh
+# !/.shellrc/**
+# !.gitignore
+# !.gitignore_global
+# !.gitconfig
+# !.atom/*.cson
 
-*history
+# *history

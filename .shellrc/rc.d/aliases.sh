@@ -1,6 +1,7 @@
 alias .=source
 
 alias 'rm=rm'
+alias 'rmr=rm -r'
 
 # -------------------------------------------------------------------
 # Some custom git aliases

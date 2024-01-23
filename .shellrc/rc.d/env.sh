@@ -1,1 +1,6 @@
-export VAULT_ADDR=http://127.0.0.1:8200
+# export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
+
+export HOMEBREW_INSTALL_BADGE="🍍"
+
+export ANDROID_HOME="/Users/Can/Library/Android/sdk"

@@ -10,9 +10,9 @@ export ZSH="/Users/Can/.oh-my-zsh"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # add custom git work_in_progress segment
-POWERLEVEL9K_CUSTOM_GIT_WIP="echo $(work_in_progress)"
-POWERLEVEL9K_CUSTOM_GIT_WIP_BACKGROUND="red"
-POWERLEVEL9K_CUSTOM_GIT_WIP_FOREGROUND="yellow"
+#POWERLEVEL9K_CUSTOM_GIT_WIP="echo $(work_in_progress)"
+#POWERLEVEL9K_CUSTOM_GIT_WIP_BACKGROUND="red"
+#POWERLEVEL9K_CUSTOM_GIT_WIP_FOREGROUND="yellow"
 
 # theme config
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs custom_git_wip)
@@ -89,6 +89,10 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbo
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -142,8 +146,8 @@ source $ZSH/oh-my-zsh.sh
 # Load all files from .shell/rc.d directory
 #if [ -d $HOME/.shellrc/rc.d ]; then
 if [ -n "$(ls -A $HOME/.shellrc/rc.d 2>/dev/null)" ]; then
-  echo "sourcing rc.d"
   for file in $HOME/.shellrc/rc.d/*.sh; do
+    echo "sourcing $file"
     source $file
   done
 fi
@@ -151,8 +155,8 @@ fi
 # Load all files from .shell/zshrc.d directory
 #if [ -d $HOME/.shellrc/zshrc.d ]; then
 if [ -n "$(ls -A $HOME/.shellrc/zshrc.d 2>/dev/null)" ]; then
-  echo "sourcing zshrc.d"
   for file in $HOME/.shellrc/zshrc.d/*.zsh; do
+    echo "sourcing $file"
     source $file
   done
 fi

@@ -1,0 +1,28 @@
+{
+  "hotkey": "alt+space",
+  "theme": "tinytacoteam/zazu-light-theme",
+  "displayOn": "detect",
+  "plugins": [
+    "tinytacoteam/zazu-calculator",
+    "tinytacoteam/zazu-file-finder",
+    "tinytacoteam/zazu-template",
+    "tinytacoteam/zazu-system",
+    "tinytacoteam/zazu-package-manager",
+    "iansinnott/zazu-emoji",
+    {
+      "name": "tinytacoteam/zazu-fallback",
+      "variables": {
+        "rootSearches": [
+          "google"
+        ]
+      }
+    },
+    {
+      "name": "tinytacoteam/zazu-clipboard",
+      "variables": {
+        "ClipboardKey": "cmd+shift+v",
+        "size": 1000
+      }
+    }
+  ]
+}
