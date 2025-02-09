@@ -1,0 +1,105 @@
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/globalias#filtered-values
+GLOBALIAS_FILTER_VALUES=(m mr mx la mv rm rmr cz)
+
+alias .=source
+
+alias cz=chezmoi
+
+alias m="mise"
+alias mx="mise exec"
+alias mr="mise run"
+
+alias omp="oh-my-posh"
+alias la="ls -lAFh --color"
+
+alias docker="podman"
+
+# nix
+alias install-nix="curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install"
+# nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/.config/nix#maquina3
+alias ndrebuild="ncup && nup && darwin-rebuild switch --flake ~/.config/nix#maquina3 && zsh"
+# alias ndrebuild="darwin-rebuild switch --flake ~/.config/nix"
+alias ncup="nix-channel --update"
+alias nup="nix flake update --flake ~/.config/nix" # followed by ndrebuild
+alias nixrepair="/nix/nix-installer repair"
+
+# homebrew
+# bbic via https://matthiasportzel.com/brewfile/
+alias bbic="brew update &&\
+    brew bundle install --cleanup --file=~/.dotfiles/Brewfile --no-lock &&\
+    brew upgrade"
+alias bbfonts="brew update &&\
+    brew bundle install --cleanup --file=~/.dotfiles/fonts.Brewfile --no-lock &&\
+    brew upgrade"
+
+alias edge-cli='CHROME_BUNDLE_IDENTIFIER="com.microsoft.edgemac" chrome-cli'
+alias brave-cli='CHROME_BUNDLE_IDENTIFIER="com.brave.Browser" chrome-cli'
+
+alias 'rm=rm'
+alias 'rmr=rm -r'
+# from https://jonbellah.com/articles/recursively-remove-ds-store/
+alias "rmdsstore=find . -name '.DS_Store' -type f -delete"
+
+# by https://stackoverflow.com/a/45239711/3484824
+alias gorunapp="go build && ./${PWD##*/}"
+
+# https://github.com/bootandy/dust
+alias du='dust'
+# https://github.com/sharkdp/bat
+alias cat='bat'
+# https://github.com/BurntSushi/ripgrep
+alias grep='rg'
+
+alias ipt='npx ipt'
+alias ntl='npx ntl'
+
+
+## Restic Backup
+alias backupWD='sudo restic -r /Volumes/WD\ Maquina\ Backups --verbose backup /Users/Can --exclude-file /Users/Can/.restic-exclude'
+## Restic Backup
+
+
+# -------------------------------------------------------------------
+# Some custom git aliases
+# In addition to ZSHs git plugin
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh
+# -------------------------------------------------------------------
+# alias git=hub
+# alias gpr='hub pull-request'
+alias gai='git add --interactive'
+alias gcoi='git branch -a | ipt | xargs git checkout'
+# alias gsti='git stash list | ipt -M "Select stash to apply:" --unquoted | cut -d ":" -f 1 | xargs git stash apply'
+alias gsti='git stash list | pick -X | cut -d ":" -f 1 | xargs git stash apply'
+# from https://dev.to/nvahalik/git-log-simplify-by-decoration-is-my-new-best-friend-3dc7
+alias glal='git log --decorate --graph --simplify-by-decoration --oneline --all'
+
+# does not work with globalias (yet)
+alias colorpallete='for code ({000..255}) print -P -- "$code: %F{$code}The quick brown fox jumps over the lazy dog%f"'
+
+alias lc='eval $(fc -ln 1 | pick)'
+
+# zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+# fpath=(~/.zsh $fpath)
+#setopt no_complete_aliases
+#setopt complete_aliases
+
+# ----------------------
+# DOTFILES
+# ----------------------
+alias dotfiles='git --git-dir=$HOME/.dotfiles/repo --work-tree=$HOME'
+alias d='dotfiles'
+alias da='dotfiles add'
+alias dss='dotfiles status --short --untracked-files=no'
+alias dapa='dotfiles add --patch'
+alias dc='dotfiles checkout'
+alias dcm='dotfiles commit --message'
+alias dp='dotfiles push'
+alias dd='dotfiles diff'
+alias dlol='dotfiles log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"'
+compdef _git dotfiles=git d=git da=git-add dc=git-checkout
+
+# -----------------
+# Pulumi
+# -----------------
+alias pse='pulumi stack export --file .PULUMI-EXPORT.json && code .PULUMI-EXPORT.json'
+alias psi='pulumi stack import --file .PULUMI-EXPORT.json && rm .PULUMI-EXPORT.json'
