@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+#######
+# DOCK
+#######
+readonly lib_bash='{{ (joinPath .chezmoi.workingTree "lib/darwin/dock.bash") }}'
+
+# shellcheck source=lib/lib.bash
+source "${lib_bash}"
+
+# via https://gist.github.com/kamui545/c810eccf6281b33a53e094484247f5e8
+declare -a apps=(
+    "/System/Applications/Launchpad.app"
+		"/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
+		"/Applications/Google Chrome.app"
+		"/System/Applications/Mail.app"
+		"/System/Applications/Notes.app"
+		"/System/Applications/Reminders.app"
+		"/Applications/Ghostty.app"
+		"/Applications/Visual Studio Code.app"
+		"/System/Applications/iPhone Mirroring.app"
+);
+
+clear_dock
+disable_recent_apps_from_dock
+
+for app in "${apps[@]}"; do
+    add_app_to_dock "$app"
+done
+
+killall Dock
+
+#######
+# END DOCK
+#######

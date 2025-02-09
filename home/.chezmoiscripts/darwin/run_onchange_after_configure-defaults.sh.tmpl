@@ -5,11 +5,11 @@
 # https://github.com/mathiasbynens/dotfiles
 
 
-read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
-echo "";
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-  exit;
-fi;
+# read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+# echo "";
+# if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+#   exit;
+# fi;
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -21,13 +21,13 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-read -e COMPUTERNAMER
+# read -e COMPUTERNAME
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName $COMPUTERNAMER
-sudo scutil --set HostName $COMPUTERNAMER
-sudo scutil --set LocalHostName $COMPUTERNAMER
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTERNAMER
+sudo scutil --set ComputerName {{ .computer_name }}
+sudo scutil --set HostName {{ .computer_name }}
+sudo scutil --set LocalHostName {{ .computer_name }}
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string {{ .computer_name }}
 
 # # Install XCode Command Line Tools
 xcode-select --install

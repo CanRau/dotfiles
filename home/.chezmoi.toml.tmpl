@@ -1,14 +1,16 @@
 {{- $name := promptStringOnce . "name" "Name" -}}
 {{- $github_username := promptStringOnce . "github.user" "Github Username" -}}
 {{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $computer_name := promptStringOnce . "computer_name" "Computer Name (local hostname)" -}}
 
 [data]
     name = {{ $name | quote }}
     email = {{ $email | quote }}
     github_username = {{ $github_username | quote }}
+    computer_name = {{ $computer_name | quote }}
 
 [data.github]
-user = {{ $github_username | toToml }}
+    user = {{ $github_username | toToml }}
 
 # [git]
 #     autoCommit = true
