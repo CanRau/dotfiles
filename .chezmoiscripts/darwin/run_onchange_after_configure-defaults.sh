@@ -1,0 +1,147 @@
+#!/usr/bin/env bash
+
+
+# @TODO(can): look into https://github.com/bahamas10/dotfiles/blob/master/install
+# https://github.com/mathiasbynens/dotfiles
+
+
+read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+echo "";
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+  exit;
+fi;
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+read -e COMPUTERNAMER
+
+# Set computer name (as done via System Preferences → Sharing)
+sudo scutil --set ComputerName $COMPUTERNAMER
+sudo scutil --set HostName $COMPUTERNAMER
+sudo scutil --set LocalHostName $COMPUTERNAMER
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTERNAMER
+
+# # Install XCode Command Line Tools
+xcode-select --install
+
+#######
+# HOMEBREW
+#######
+if brew -v ; then
+	echo "Homebrew already installed"
+else
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+#######
+# SETTINGS
+#######
+
+# makes "defaults" command print to screen
+defaults() {
+	echo defaults "$@"
+	command defaults "$@"
+}
+
+# > NOT WORKING
+# Test where n is delay in seconds (integer)
+# from https://apple.stackexchange.com/a/177436/128561
+# Note that on Yosemite it's com.apple.mail (mail without capital "M"
+# defaults write com.apple.Mail MarkAsReadDelay 30
+# defaults write com.apple.mail MarkAsReadDelay 30
+
+# Ensure defaultbrowser is in PATH
+export PATH=${defaultbrowser}/bin:$PATH
+defaultbrowser chrome
+
+# Allow Karabiner-Elements to receive keyboard events
+
+# only run if not run before?
+/usr/bin/sudo /usr/bin/security authorizationdb write system.privilege.taskport allow
+
+# as screensaver.askForPasswordDelay above doesn't seem to work
+# sudo defaults write com.apple.screensaver askForPasswordDelay -int 0
+# found via https://superuser.com/a/362496/817900 & https://forums.developer.apple.com/forums/thread/84324
+osascript -e 'tell application "System Events" to set require password to wake of security preferences to true'
+
+# disable startup sound
+sudo nvram StartupMute=%01
+
+# Set Keyboard > Keyborad Navigation (not Accessibility > Full Keyboard Access)
+sudo defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
+
+# Always show scrollbars
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+
+# Save to disk (not to iCloud) by default
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# Disable automatic termination of inactive apps
+defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
+
+# auto correct stuff
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+# Disable smart dashes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+# Disable automatic period substitution as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+# Disable smart quotes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Trackpad: enable tap to click for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Trackpad: 3 finger drag
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -int 1
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -int 1
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+
+
+# Save screenshots to the desktop
+mkdir -vp "$HOME/Pictures/Screenshots"
+defaults write com.apple.screencapture location -string "$HOME/Pictures/Screenshots"
+# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+defaults write com.apple.screencapture type -string "png"
+# Disable shadow in screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
+
+
+
+
+# Set language and text formats
+# Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
+# `Inches`, `en_GB` with `en_US`, and `true` with `false`.
+defaults write NSGlobalDomain AppleLanguages -array "en" "de" "es"
+defaults write NSGlobalDomain AppleLocale -string "en_US@currency=EUR"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleMetricUnits -bool true
+
+
+# Enable Touch ID for sudo from https://apple.stackexchange.com/a/422792/128561
+sudo su root -c 'chmod +w /etc/pam.d/sudo && echo "auth       sufficient     pam_tid.so\n$(cat /etc/pam.d/sudo)" > /etc/pam.d/sudo && chmod -w /etc/pam.d/sudo'
+
+
+#######
+# END SETTINGS
+#######
+
+# apply all new changes immediately
+killall SystemUIServer
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
