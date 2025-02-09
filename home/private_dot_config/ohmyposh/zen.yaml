@@ -1,0 +1,111 @@
+# inspired by https://github.com/dreamsofautonomy/zen-omp/blob/main/zen.toml from https://youtu.be/9U8LCjuQzdc?si=vK-ljhU2loz1dZWb
+
+console_title_template: "{{ .Shell }} in {{ .Folder }}"
+version: 3
+final_space: true
+
+transient_prompt:
+  template: "❯ "
+  background: transparent
+  foreground_templates:
+    - "{{if gt .Code 0}}red{{end}}"
+    - "{{if eq .Code 0}}magenta{{end}}"
+
+secondary_prompt:
+  template: "❯❯ "
+  foreground: magenta
+  background: transparent
+
+blocks:
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - type: path
+        template: "{{ .Path }}"
+        foreground: blue
+        background: transparent
+        style: plain
+        properties:
+          cache_duration: none
+          style: full
+      - type: git
+        template:
+          " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end
+          }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end
+          }}</>"
+        foreground: p:grey
+        background: transparent
+        style: plain
+        properties:
+          branch_icon: ""
+          cache_duration: none
+          commit_icon: "@"
+          fetch_status: true
+      - type: node
+        template: "  {{ .Full }} "
+      - type: deno
+        style: plain
+        foreground: "#3C82F6"
+        template: "  {{ .Full }} "
+        properties:
+          home_enabled: false
+          display_mode: files
+          extensions:
+            - deno.json
+            - deno.json
+      - type: zig
+        powerline_symbol: 
+        foreground: "#342311"
+        background: "#ffad55"
+        template: "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        properties:
+          home_enabled: false
+      - type: pnpm
+        template: " 󰋁 {{ .Full }} "
+        properties:
+          display_mode: files
+          extensions:
+            - pnpm-lock.yaml
+      - type: npm
+        template: " {{ .Full }} "
+        properties:
+          home_enabled: false
+          display_mode: files
+          extensions:
+            - package-lock.json
+
+  - type: rprompt
+    overflow: hidden
+    segments:
+      - type: executiontime
+        template: " {{ .FormattedMs }} "
+        foreground: yellow
+        background: transparent
+        style: plain
+        properties:
+          cache_duration: none
+          threshold: 5000
+      - type: "time"
+        style: "plain"
+        foreground: "#007ACC"
+        template: " \uf017 {{ .CurrentDate | date .Format }} "
+        # template: "{{ .CurrentDate | date .Format }} {{ dateInZone "15:04Z" .CurrentDate "UTC" }}"
+      - type: upgrade
+        style: plain
+        foreground: "#111111"
+        background: "#FFD664"
+
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - template: ❯
+        background: transparent
+        type: text
+        style: plain
+        foreground_templates:
+          - "{{if gt .Code 0}}red{{end}}"
+          - "{{if eq .Code 0}}magenta{{end}}"
+        properties:
+          cache_duration: none
