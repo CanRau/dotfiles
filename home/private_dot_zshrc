@@ -10,8 +10,9 @@ source $XDG_CONFIG_HOME/shell/path.sh
 source $XDG_CONFIG_HOME/shell/env.sh
 source $XDG_CONFIG_HOME/zsh/aliases.zsh
 source $XDG_CONFIG_HOME/zsh/functions.zsh
-# source $HOME/.shellrc/completions/mise.zsh
-source $HOME/.shellrc/completions/jj.zsh
+source $XDG_CONFIG_HOME/shell/completions/chezmoi.zsh
+source $XDG_CONFIG_HOME/shell/completions/jj.zsh
+# source $XDG_CONFIG_HOME/shell/completions/mise.zsh
 
 # Brew
 
