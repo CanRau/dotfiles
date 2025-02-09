@@ -6,10 +6,10 @@
 autoload -Uz compinit && compinit
 
 source $HOME/.bash_aliases
-source $HOME/.shellrc/rc.d/1.path.sh
-source $HOME/.shellrc/rc.d/2.env.sh
-source $HOME/.shellrc/zshrc.d/aliases.zsh
-source $HOME/.shellrc/zshrc.d/functions.zsh
+source $XDG_CONFIG_HOME/shell/path.sh
+source $XDG_CONFIG_HOME/shell/env.sh
+source $XDG_CONFIG_HOME/zsh/aliases.zsh
+source $XDG_CONFIG_HOME/zsh/functions.zsh
 # source $HOME/.shellrc/completions/mise.zsh
 source $HOME/.shellrc/completions/jj.zsh
 
