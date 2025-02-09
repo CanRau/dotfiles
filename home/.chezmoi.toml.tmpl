@@ -1,0 +1,15 @@
+{{- $name := promptStringOnce . "name" "Name" -}}
+{{- $github_username := promptStringOnce . "github.user" "Github Username" -}}
+{{- $email := promptStringOnce . "email" "Email address" -}}
+
+[data]
+    name = {{ $name | quote }}
+    email = {{ $email | quote }}
+    github_username = {{ $github_username | quote }}
+
+[data.github]
+user = {{ $github_username | toToml }}
+
+# [git]
+#     autoCommit = true
+#     autoPush = true

@@ -1,0 +1,11 @@
+# https://ghostty.org/docs/config/reference
+
+shell-integration = zsh
+window-save-state = always
+font-family = JetBrainsMono Nerd Font
+cursor-style = block
+
+# Keybinds
+keybind = global:alt+shift+t=toggle_quick_terminal
+keybind = super+alt+left=previous_tab
+keybind = super+alt+right=next_tab
