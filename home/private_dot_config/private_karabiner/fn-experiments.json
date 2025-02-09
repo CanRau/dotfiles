@@ -1,0 +1,44 @@
+[
+    {
+        "description": "Raycast Emoji Picker — fn to left_control, left_command, spacebar which is my global hotkey to open the Raycast Emoji Picker",
+        "manipulators": [
+            {
+                "from": { "key_code": "fn" },
+                "to_if_alone": [
+                    {
+                        "key_code": "spacebar",
+                        "modifiers": ["left_control", "left_command"]
+                    }
+                ],
+                "to": [{ "key_code": "left_command", "modifiers": ["right_command"] }],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "Re-store delete_forward",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "delete_or_backspace",
+                    "modifiers": { "mandatory": ["left_command", "right_command"] }
+                },
+                "to": [{ "key_code": "delete_forward" }],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "Re-store F12",
+        "manipulators": [
+            {
+                "from": {
+                    "consumer_key_code": "volume_increment",
+                    "modifiers": { "mandatory": ["left_command", "right_command"] }
+                },
+                "to": [{ "key_code": "f12" }],
+                "type": "basic"
+            }
+        ]
+    }
+]
