@@ -6,13 +6,13 @@
 autoload -Uz compinit && compinit
 
 source $HOME/.bash_aliases
-source $XDG_CONFIG_HOME/shell/path.sh
-source $XDG_CONFIG_HOME/shell/env.sh
-source $XDG_CONFIG_HOME/zsh/aliases.zsh
-source $XDG_CONFIG_HOME/zsh/functions.zsh
-source $XDG_CONFIG_HOME/shell/completions/chezmoi.zsh
-source $XDG_CONFIG_HOME/shell/completions/jj.zsh
-# source $XDG_CONFIG_HOME/shell/completions/mise.zsh
+source $HOME/.config/shell/path.sh
+source $HOME/.config/shell/env.sh
+source $HOME/.config/zsh/aliases.zsh
+source $HOME/.config/zsh/functions.zsh
+source $HOME/.config/shell/completions/chezmoi.zsh
+source $HOME/.config/shell/completions/jj.zsh
+# source $HOME/.config/shell/completions/mise.zsh
 
 # Brew
 
