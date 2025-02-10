@@ -1,9 +1,11 @@
 #!/usr/bin/env sh
 
-#######
-# auto upgrade and install packages if .config/brew/Brewfile has changed (when running cz apply)
-#######
+# brew package updates should be run whenever the Brewfile is updated or once a week.
+#
+# Source: {{ includeTemplate "private_dot_config/brew/Brewfile.tmpl" . | sha256sum }}
+# Weekly: {{ output "date" "+%V" | trim }}
 
-# Brewfile hash: {{ include (joinPath .chezmoi.workingTree "home/private_dot_config/brew/Brewfile") | sha256sum }}
+readonly aliases='{{ joinPath .chezmoi.workingTree "home/private_dot_bash_aliases" }}'
+source "${aliases}"
 
 bbic
