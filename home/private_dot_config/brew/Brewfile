@@ -1,0 +1,127 @@
+tap "homebrew/bundle"
+# brew tap buo/cask-upgrade # https://github.com/buo/homebrew-cask-upgrade
+
+# brew tap "homebrew/cask"
+# brew tap "homebrew/cask-versions"
+# brew tap "homebrew/core"
+
+#######################
+###     FORMULAE    ###
+#######################
+# brew "jandedobbeleer/oh-my-posh/oh-my-posh"
+brew "awscli"
+brew "ack"
+brew "bash" # Latest Bash version
+brew "bat"
+brew "bitwarden-cli"
+brew "c2patool" # Content Credentials https://c2pa.org/ found via https://blog.cloudflare.com/preserve-content-credentials-with-cloudflare-images/
+brew "chezmoi"
+brew "coreutils" # Those that come with macOS are outdated
+brew "defaultbrowser"
+brew "dum" # https://github.com/egoist/dum
+brew "fd" # https://github.com/sharkdp/fd
+brew "ffmpeg"
+brew "flyctl"
+brew "fzf"
+brew "gh"
+brew "git"
+brew "gnupg"
+brew "jj" # jj dvcs
+brew "jq"
+brew "mas" # Mac App Store CLI - https://github.com/mas-cli/mas
+brew "mise" # https://mise.jdx.dev/
+brew "oh-my-posh"
+brew "podman"
+brew "pscale"
+brew "ripgrep"
+brew "starship"
+brew "stripe-cli"
+brew "stripe-mock"
+brew "thefuck"
+brew "zoxide"
+brew "zsh-completions"
+brew "zsh"
+
+#######################
+###      CASKS     ###
+#######################
+# cask "brave-browser"
+# cask "orbstack"
+# cask "waveterm"
+cask "affinity-designer"
+cask "affinity-photo"
+cask "affinity-publisher"
+cask "alt-tab"
+# cask "backblaze"
+cask "backblaze-downloader"
+cask "blender"
+cask "db-browser-for-sqlite"
+cask "discord"
+cask "figma"
+cask "ghostty"
+cask "google-chrome"
+cask "iina"
+cask "iterm2"
+cask "insta360-studio"
+cask "karabiner-elements"
+cask "microsoft-edge"
+cask "netnewswire"
+cask "notion"
+cask "obsidian"
+cask "podman-desktop"
+cask "raycast"
+# cask "sequel-ace"
+cask "spotify"
+cask "surrealdb/tap/surreal"
+cask "tableplus"
+cask "telegram-desktop"
+cask "transmission"
+cask "visual-studio-code"
+cask "wezterm"
+cask "whatsapp"
+cask "zen-browser"
+
+#######################
+###    QUICKLOOK    ###
+#######################
+cask "qlimagesize"
+cask "qlmarkdown"
+cask "qlstephen"
+cask "quicklook-csv"
+cask "quicklook-json"
+
+#######################
+###    FONT TOOLS   ###
+#######################
+brew "fontconfig" # https://wiki.freedesktop.org/www/Software/fontconfig/
+cask "fontbase" # https://fontba.se/
+cask "rightfont" # https://rightfontapp.com/
+cask "fontgoggles" # https://fontgoggles.org/
+cask "fontstand" # https://fontstand.com/
+# brew "fnt" # use homebrew casks instead, for now https://github.com/alexmyczko/fnt
+# cask "fontfinagler" # https://markdouma.com/fontfinagler
+# cask "fontplop" # https://github.com/matthewgonzalez/fontplop
+# cask "fontsmoothingadjuster" # https://www.fontsmoothingadjuster.com/
+
+#######################
+###  FONT EDITING   ###
+#######################
+cask "fontforge" # https://fontforge.org/
+cask "fontcreator" # https://www.high-logic.com/font-editor/fontcreator
+cask "fontlab" # https://www.fontlab.com/font-editor/fontlab/
+
+#######################
+### App Store Appes ###
+######################
+mas "Bitwarden", id: 1352778147 # using mas for Bitwarden instead of cask for some extra vetting/security
+# mas 'Keynote', id: 409183694
+mas 'Pages', id: 409201541
+mas 'Numbers', id: 409203825
+mas "Dato", id: 1470584107
+mas "Xcode", id: 497799835
+# mas "WhatsApp", id: 310633997
+
+#######################
+###      FONTS      ###
+#######################
+# file "~/.dotfiles/Brewfile.fonts"
