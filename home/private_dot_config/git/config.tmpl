@@ -1,0 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+name = {{ .github_username }}
+email = {{ .email }}
+
+[init]
+	defaultBranch = main
+
+[commit]
+	template = {{ (joinPath .chezmoi.workingTree "home/private_dot_config/git/commit-message") }}
