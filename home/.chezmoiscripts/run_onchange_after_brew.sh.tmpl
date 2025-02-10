@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+#######
+# auto upgrade and install packages if .config/brew/Brewfile has changed (when running cz apply)
+#######
+
+# Brewfile hash: {{ include (joinPath .chezmoi.workingTree "home/private_dot_config/brew/Brewfile") | sha256sum }}
+
+bbic

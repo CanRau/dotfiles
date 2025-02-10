@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+#######
+# auto upgrade and install packages if .config/brew/fonts.Brewfile has changed (when running cz apply)
+#######
+
+# fonts.Brewfile hash: {{ include (joinPath .chezmoi.workingTree "home/private_dot_config/brew/fonts.Brewfile") | sha256sum }}
+
+source $HOME/.bash_aliases
+
+bbfonts
