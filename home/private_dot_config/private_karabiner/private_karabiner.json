@@ -258,7 +258,7 @@
                                     "key_code": "d",
                                     "modifiers": { "mandatory": ["right_shift", "right_command", "right_control", "right_option"] }
                                 },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/code --new-window ~/.dotfiles/dotfiles.code-workspace" }],
+                                "to": [{ "shell_command": "/opt/homebrew/bin/code --new-window ~/.local/share/chezmoi" }],
                                 "type": "basic"
                             }
                         ]
