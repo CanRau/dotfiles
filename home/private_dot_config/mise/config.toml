@@ -1,5 +1,5 @@
 [tools]
-node = "20"
+node = ["lts", "latest"]
 "npm:@antfu/ni" = "latest"
 zig = "latest"
 bun = "latest"
