@@ -10,9 +10,6 @@ source $HOME/.config/shell/path.sh
 source $HOME/.config/shell/env.sh
 source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/functions.zsh
-source $HOME/.config/shell/completions/chezmoi.zsh
-source $HOME/.config/shell/completions/jj.zsh
-# source $HOME/.config/shell/completions/mise.zsh
 
 # Brew
 
@@ -106,11 +103,15 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval $(thefuck --alias)
 
+source $HOME/.config/shell/completions/chezmoi.zsh
+source $HOME/.config/shell/completions/jj.zsh
+# source $HOME/.config/shell/completions/mise.zsh
+
 
 # Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
+# if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+#   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+# fi
 # End Nix
 
 
