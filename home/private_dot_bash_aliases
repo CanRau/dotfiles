@@ -1,9 +1,10 @@
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/globalias#filtered-values
-GLOBALIAS_FILTER_VALUES=(m mr mx la mv rm rmr cz)
+GLOBALIAS_FILTER_VALUES=(m mr mx la mv rm rmr cm cma)
 
 alias .=source
 
-alias cz=chezmoi
+alias cm="chezmoi"
+alias cma="chezmoi apply && zsh"
 
 alias m="mise"
 alias mx="mise exec"
