@@ -1,0 +1,123 @@
+{
+  "type" : "group",
+  "actions" : [
+    {
+      "key" : "o",
+      "type" : "group",
+      "actions" : [
+        {
+          "value" : "/Applications/Safari.app",
+          "label" : "",
+          "type" : "application",
+          "key" : "s"
+        },
+        {
+          "value" : "/Applications/Mail.app",
+          "type" : "application",
+          "label" : "",
+          "key" : "e"
+        },
+        {
+          "key" : "i",
+          "type" : "application",
+          "label" : "",
+          "value" : "/System/Applications/Music.app"
+        },
+        {
+          "key" : "m",
+          "value" : "/Applications/Messages.app",
+          "type" : "application",
+          "label" : ""
+        }
+      ],
+      "label" : ""
+    },
+    {
+      "key" : "r",
+      "type" : "group",
+      "actions" : [
+        {
+          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
+          "key" : "e",
+          "type" : "url",
+          "label" : ""
+        },
+        {
+          "label" : "",
+          "key" : "p",
+          "value" : "raycast://confetti",
+          "type" : "url"
+        },
+        {
+          "label" : "",
+          "key" : "c",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/system/open-camera"
+        }
+      ],
+      "label" : "Raycast"
+    },
+    {
+      "key" : "t",
+      "actions" : [
+        {
+          "type" : "application",
+          "key" : "g",
+          "label" : "",
+          "value" : "/Applications/Ghostty.app"
+        },
+        {
+          "key" : "i",
+          "type" : "application",
+          "value" : "/Applications/iTerm.app",
+          "label" : ""
+        },
+        {
+          "label" : "",
+          "value" : "/Applications/WezTerm.app",
+          "key" : "w",
+          "type" : "application"
+        },
+        {
+          "value" : "/System/Applications/Utilities/Terminal.app",
+          "type" : "application",
+          "label" : "",
+          "key" : "t"
+        }
+      ],
+      "type" : "group",
+      "label" : "Terminal"
+    },
+    {
+      "actions" : [
+        {
+          "type" : "application",
+          "label" : "",
+          "key" : "c",
+          "value" : "/Applications/Google Chrome.app"
+        },
+        {
+          "type" : "application",
+          "label" : "",
+          "key" : "e",
+          "value" : "/Applications/Microsoft Edge.app"
+        },
+        {
+          "type" : "application",
+          "key" : "z",
+          "value" : "/Applications/Zen Browser.app",
+          "label" : ""
+        },
+        {
+          "key" : "s",
+          "value" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app",
+          "type" : "application",
+          "label" : ""
+        }
+      ],
+      "key" : "b",
+      "type" : "group",
+      "label" : "Browser"
+    }
+  ]
+}
