@@ -24,6 +24,29 @@
                         ]
                     },
                     {
+                        "description": "Akimbo cmd to F12",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "simultaneous": [
+                                        { "key_code": "left_command" },
+                                        { "key_code": "right_command" }
+                                    ],
+                                    "simultaneous_options": {
+                                        "to_after_key_up": [
+                                            {
+                                                "key_code": "f12",
+                                                "modifiers": ["fn"]
+                                            }
+                                        ]
+                                    }
+                                },
+                                "to": [{ "key_code": "vk_none" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Change option + a/o/u to ä/ö/ü",
                         "manipulators": [
                             {
