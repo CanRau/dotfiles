@@ -33,6 +33,15 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 xcode-select --install
 
 #######
+# Mise (https://mise.jdx.dev/)
+#######
+if mise -v ; then
+	echo "mise already installed"
+else
+	curl https://mise.run | sh
+fi
+
+#######
 # HOMEBREW
 #######
 if brew -v ; then

@@ -17,6 +17,7 @@ brew "bitwarden-cli"
 brew "c2patool" # Content Credentials https://c2pa.org/ found via https://blog.cloudflare.com/preserve-content-credentials-with-cloudflare-images/
 brew "chezmoi"
 brew "coreutils" # Those that come with macOS are outdated
+brew "cloc"
 brew "defaultbrowser"
 brew "dum" # https://github.com/egoist/dum
 brew "fd" # https://github.com/sharkdp/fd
@@ -28,14 +29,15 @@ brew "git"
 brew "git-filter-repo"
 brew "gnupg"
 brew "jj" # jj dvcs
+brew "just"
 brew "jq"
 brew "mas" # Mac App Store CLI - https://github.com/mas-cli/mas
-brew "mise" # https://mise.jdx.dev/
+# brew "mise" # installed "manually" now by chezmoi (home/.chezmoiscripts/darwin/run_onchange_after_configure-defaults.sh.tmpl) # https://mise.jdx.dev/
 brew "oh-my-posh"
 brew "podman"
 brew "pscale"
 brew "ripgrep"
-brew "surrealdb/tap/surreal"
+# brew "surrealdb/tap/surreal"
 brew "starship"
 brew "stripe-cli"
 brew "stripe-mock"
@@ -50,14 +52,19 @@ brew "zsh"
 cask "affinity-designer"
 cask "affinity-photo"
 cask "affinity-publisher"
-cask "alt-tab"
+# cask "alt-tab"
 cask "backblaze"
 cask "backblaze-downloader"
 cask "blender"
+cask "brave-browser"
 cask "cursor"
 cask "db-browser-for-sqlite"
 cask "discord"
+cask "legcord" # 3rd Party Discord Client
+cask "electrum"
+cask "element"
 cask "figma"
+cask "firefox"
 cask "ghostty"
 cask "google-chrome"
 cask "iina"
@@ -70,16 +77,22 @@ cask "microsoft-edge"
 cask "netnewswire"
 cask "notion"
 cask "obsidian"
+cask "orion"
+cask "ollama"
 cask "podman-desktop"
 cask "raycast"
+cask "stellarium"
 cask "spotify"
 cask "tableplus"
 cask "telegram-desktop"
 cask "transmission"
+cask "tor-browser"
+cask "utm"
 cask "visual-studio-code"
 cask "vivaldi"
 cask "wezterm"
 cask "whatsapp"
+cask "zed"
 cask "zen-browser"
 
 #######################
@@ -119,6 +132,8 @@ mas "Bitwarden", id: 1352778147 # using mas for Bitwarden instead of cask for so
 mas 'Pages', id: 409201541
 mas 'Numbers', id: 409203825
 mas "Dato", id: 1470584107
+mas "Actions", id: 1586435171
+mas "Toolbox Pro for Shortcuts", id: 1476205977
 mas "Xcode", id: 497799835
 # mas "WhatsApp", id: 310633997
 

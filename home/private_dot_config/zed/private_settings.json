@@ -1,0 +1,58 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+	"ui_font_size": 14,
+	"buffer_font_size": 13,
+	"theme": {
+		"mode": "system",
+		"light": "One Light",
+		"dark": "Ayu Dark"
+	},
+
+	"hard_tabs": true,
+	"relative_line_numbers": false, // interesting but so far can't figure out how to jump to relative lines, maybe that works only in vim mode?
+
+	"indent_guides": {
+		"enabled": true,
+		"line_width": 1,
+		"active_line_width": 1,
+		"coloring": "indent_aware",
+		"background_coloring": "indent_aware"
+	},
+
+	// prettier format on save stuff found via https://github.com/zed-industries/zed/discussions/13602#discussioncomment-9897862
+	"languages": {
+		"TypeScript": {
+			"formatter": "prettier",
+			"code_actions_on_format": {
+				"source.fixAll.eslint": true
+			},
+			"format_on_save": {
+				"external": {
+					"command": "prettier",
+					"arguments": ["--stdin-filepath", "{buffer_path}"]
+				}
+			}
+		},
+		"TSX": {
+			"formatter": "prettier",
+			"code_actions_on_format": {
+				"source.fixAll.eslint": true
+			},
+			"format_on_save": "on"
+		},
+		"JavaScript": {
+			"formatter": "prettier",
+			"code_actions_on_format": {
+				"source.fixAll.eslint": true
+			},
+			"format_on_save": "on"
+		}
+	}
+}

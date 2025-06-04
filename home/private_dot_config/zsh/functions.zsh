@@ -22,33 +22,33 @@ function mcd () {
     mkdir -p "$@" && cd "$@"
 }
 
-function upgradeall () {
-  # in parallel update fly & package managers
-  # fly version update & \
-  # brew update & \
-  # asdf update
+# function upgradeall () {
+#   # in parallel update fly & package managers
+#   # fly version update & \
+#   # brew update & \
+#   # asdf update
 
-  # # then in parallel upgrade the rest
-  # asdf plugin update --all & \
-  # mise self-update --yes && \
-  # mise upgrade
-  # mise self-update --yes --quiet & \
-  chezmoi upgrade & \
-  brew upgrade && \
-    mise upgrade
-  # & \
-  # deno upgrade
-  # & \
-  # zvm upgrade # & \
-  # ni is now handled by asdf CanRau/asdf-ni
-  # npm i -g @antfu/ni wrangler & \
-  # update all global asdf managed plugins (from https://github.com/asdf-vm/asdf/issues/35#issuecomment-1261491266)
-  # for tool in $(asdf plugin list); do
-  #   asdf install "${tool}" latest \
-  #     &&  asdf global "${tool}" latest \
-  #     &&  echo "[asdf]: ${tool} set globally"
-  # echo "done" # doesn't work like that 😅
-}
+#   # # then in parallel upgrade the rest
+#   # asdf plugin update --all & \
+#   # mise self-update --yes && \
+#   # mise upgrade
+#   # mise self-update --yes --quiet & \
+#   chezmoi upgrade & \
+#   brew upgrade && \
+#     mise upgrade
+#   # & \
+#   # deno upgrade
+#   # & \
+#   # zvm upgrade # & \
+#   # ni is now handled by asdf CanRau/asdf-ni
+#   # npm i -g @antfu/ni wrangler & \
+#   # update all global asdf managed plugins (from https://github.com/asdf-vm/asdf/issues/35#issuecomment-1261491266)
+#   # for tool in $(asdf plugin list); do
+#   #   asdf install "${tool}" latest \
+#   #     &&  asdf global "${tool}" latest \
+#   #     &&  echo "[asdf]: ${tool} set globally"
+#   # echo "done" # doesn't work like that 😅
+# }
 
 # https://github.com/rebuy-de/aws-nuke
 function awsnuke () {

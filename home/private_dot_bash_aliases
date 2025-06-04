@@ -4,7 +4,9 @@ GLOBALIAS_FILTER_VALUES=(m mr mx la mv rm rmr cm cma)
 alias .=source
 
 alias cm="chezmoi"
-alias cma="chezmoi apply && zsh"
+alias cma="chezmoi apply && upgradeall && zsh"
+
+alias upgradeall="chezmoi upgrade && brew update && brew upgrade && mise self-update && mise upgrade"
 
 alias m="mise"
 alias mx="mise exec"
@@ -27,11 +29,13 @@ alias nixrepair="/nix/nix-installer repair"
 # homebrew
 # bbic via https://matthiasportzel.com/brewfile/
 alias bbic="brew update &&\
-    brew bundle install --cleanup --file=~/.config/brew/Brewfile --no-lock &&\
-    brew upgrade"
+    brew bundle install --cleanup --force --upgrade --file=~/.config/brew/Brewfile &&\
+    brew upgrade &&\
+    brew autoremove"
 alias bbfonts="brew update &&\
-    brew bundle install --cleanup --file=~/.config/brew/fonts.Brewfile --no-lock &&\
-    brew upgrade"
+    brew bundle install --cleanup --force --upgrade --file=~/.config/brew/fonts.Brewfile &&\
+    brew upgrade &&\
+    brew autoremove"
 
 alias edge-cli='CHROME_BUNDLE_IDENTIFIER="com.microsoft.edgemac" chrome-cli'
 alias brave-cli='CHROME_BUNDLE_IDENTIFIER="com.brave.Browser" chrome-cli'
