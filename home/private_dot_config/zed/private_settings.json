@@ -30,6 +30,15 @@
 		"background_coloring": "indent_aware"
 	},
 
+	"lsp": {
+		"tailwindcss-language-server": {
+			"settings": {
+				"classAttributes": ["class", "className"],
+				"classFunctions": ["cn", "cva", "cx", "tv"]
+			}
+		}
+	},
+
 	// prettier format on save stuff found via https://github.com/zed-industries/zed/discussions/13602#discussioncomment-9897862
 	"languages": {
 		"TypeScript": {
