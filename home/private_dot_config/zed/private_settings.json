@@ -7,6 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+	"vim_mode": false,
+	"vim": {
+		"toggle_relative_line_numbers": true
+	},
+
 	"ui_font_size": 14,
 	"buffer_font_size": 13,
 	"theme": {
@@ -16,7 +21,6 @@
 	},
 
 	"hard_tabs": true,
-	"relative_line_numbers": false, // interesting but so far can't figure out how to jump to relative lines, maybe that works only in vim mode?
 
 	"indent_guides": {
 		"enabled": true,
