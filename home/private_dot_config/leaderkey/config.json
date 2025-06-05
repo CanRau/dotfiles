@@ -2,141 +2,150 @@
   "type" : "group",
   "actions" : [
     {
+      "key" : "f",
+      "label" : "Favorites",
+      "type" : "group",
       "actions" : [
         {
-          "label" : "",
-          "value" : "/Applications/Ghostty.app",
+          "key" : "g",
           "type" : "application",
+          "label" : "",
+          "value" : "/Applications/Ghostty.app"
+        },
+        {
+          "key" : "z",
+          "type" : "application",
+          "label" : "",
+          "value" : "/Applications/Zed.app"
+        },
+        {
+          "key" : "v",
+          "type" : "application",
+          "label" : "",
+          "value" : "/Applications/Visual Studio Code.app"
+        },
+        {
+          "key" : "i",
+          "type" : "application",
+          "label" : "",
+          "value" : "/Applications/iTerm.app"
+        },
+        {
+          "key" : "d",
+          "type" : "application",
+          "label" : "",
+          "value" : "/Applications/Discord.app"
+        },
+        {
+          "key" : "t",
+          "type" : "application",
+          "label" : "",
+          "value" : "/Applications/TablePlus.app"
+        },
+        {
+          "key" : "o",
+          "type" : "application",
+          "label" : "",
+          "value" : "/Applications/Obsidian.app"
+        },
+        {
+          "key" : "s",
+          "type" : "application",
+          "label" : "",
+          "value" : "/Applications/Spotify.app"
+        },
+        {
+          "key" : "m",
+          "type" : "application",
+          "label" : "",
+          "value" : "/System/Applications/Mail.app"
+        },
+        {
+          "key" : "w",
+          "type" : "application",
+          "label" : "",
+          "value" : "/Applications/WhatsApp.app"
+        },
+        {
+          "key" : "c",
+          "type" : "application",
+          "label" : null,
+          "value" : "/Applications/Google Chrome.app"
+        }
+      ]
+    },
+    {
+      "key" : "t",
+      "label" : "Terminal",
+      "type" : "group",
+      "actions" : [
+        {
+          "type" : "application",
+          "value" : "/Applications/Ghostty.app",
+          "label" : "",
           "key" : "g"
         },
         {
-          "label" : "",
-          "value" : "/Applications/Zed.app",
           "type" : "application",
-          "key" : "z"
-        },
-        {
-          "label" : "",
-          "value" : "/Applications/Visual Studio Code.app",
-          "type" : "application",
-          "key" : "v"
-        },
-        {
-          "label" : "",
           "value" : "/Applications/iTerm.app",
-          "type" : "application",
+          "label" : "",
           "key" : "i"
         },
         {
           "type" : "application",
-          "label" : "",
-          "key" : "d",
-          "value" : "/Applications/Discord.app"
-        },
-        {
-          "type" : "application",
-          "label" : "",
-          "key" : "t",
-          "value" : "/Applications/TablePlus.app"
-        },
-        {
-          "type" : "application",
-          "label" : "",
-          "key" : "o",
-          "value" : "/Applications/Obsidian.app"
-        },
-        {
-          "type" : "application",
-          "label" : "",
-          "key" : "s",
-          "value" : "/Applications/Spotify.app"
-        },
-        {
-          "type" : "application",
-          "label" : "",
-          "key" : "m",
-          "value" : "/System/Applications/Mail.app"
-        },
-        {
-          "type" : "application",
-          "label" : "",
-          "key" : "w",
-          "value" : "/Applications/WhatsApp.app"
-        }
-      ],
-      "label" : "Favorites",
-      "key" : "f",
-      "type" : "group"
-    },
-    {
-      "actions" : [
-        {
-          "value" : "/Applications/Ghostty.app",
-          "label" : "",
-          "key" : "g",
-          "type" : "application"
-        },
-        {
-          "value" : "/Applications/iTerm.app",
-          "label" : "",
-          "key" : "i",
-          "type" : "application"
-        },
-        {
           "value" : "/Applications/WezTerm.app",
           "label" : "",
-          "key" : "w",
-          "type" : "application"
+          "key" : "w"
         },
         {
+          "type" : "application",
           "value" : "/System/Applications/Utilities/Terminal.app",
           "label" : "",
-          "key" : "t",
-          "type" : "application"
+          "key" : "t"
         }
-      ],
-      "label" : "Terminal",
-      "key" : "t",
-      "type" : "group"
+      ]
     },
     {
+      "key" : "b",
+      "label" : "Browser",
+      "type" : "group",
       "actions" : [
         {
-          "label" : "Chrome",
-          "key" : "c",
           "type" : "application",
+          "key" : "c",
+          "label" : "Chrome",
           "value" : "/Applications/Google Chrome.app"
         },
         {
-          "label" : "Edge",
-          "key" : "e",
           "type" : "application",
+          "key" : "e",
+          "label" : "Edge",
           "value" : "/Applications/Microsoft Edge.app"
         },
         {
-          "label" : "Zen",
-          "key" : "z",
           "type" : "application",
+          "key" : "z",
+          "label" : "Zen",
           "value" : "/Applications/Zen Browser.app"
         },
         {
-          "label" : "Brave",
-          "key" : "b",
           "type" : "application",
+          "key" : "b",
+          "label" : "Brave",
           "value" : "/Applications/Brave Browser.app"
         },
         {
-          "label" : "Safari",
-          "key" : "s",
           "type" : "application",
+          "key" : "s",
+          "label" : "Safari",
           "value" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
         }
-      ],
-      "label" : "Browser",
-      "key" : "b",
-      "type" : "group"
+      ]
     },
     {
+      "key" : "r",
+      "label" : "Raycast",
+      "type" : "group",
       "actions" : [
         {
           "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
@@ -156,10 +165,7 @@
           "type" : "url",
           "label" : ""
         }
-      ],
-      "label" : "Raycast",
-      "key" : "r",
-      "type" : "group"
+      ]
     }
   ]
 }
