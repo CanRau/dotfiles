@@ -2,39 +2,141 @@
   "type" : "group",
   "actions" : [
     {
-      "key" : "o",
-      "type" : "group",
       "actions" : [
         {
-          "value" : "/Applications/Safari.app",
           "label" : "",
+          "value" : "/Applications/Ghostty.app",
           "type" : "application",
-          "key" : "s"
+          "key" : "g"
         },
         {
-          "value" : "/Applications/Mail.app",
-          "type" : "application",
           "label" : "",
-          "key" : "e"
+          "value" : "/Applications/Zed.app",
+          "type" : "application",
+          "key" : "z"
         },
         {
-          "key" : "i",
-          "type" : "application",
           "label" : "",
-          "value" : "/System/Applications/Music.app"
+          "value" : "/Applications/Visual Studio Code.app",
+          "type" : "application",
+          "key" : "v"
         },
         {
+          "label" : "",
+          "value" : "/Applications/iTerm.app",
+          "type" : "application",
+          "key" : "i"
+        },
+        {
+          "type" : "application",
+          "label" : "",
+          "key" : "d",
+          "value" : "/Applications/Discord.app"
+        },
+        {
+          "type" : "application",
+          "label" : "",
+          "key" : "t",
+          "value" : "/Applications/TablePlus.app"
+        },
+        {
+          "type" : "application",
+          "label" : "",
+          "key" : "o",
+          "value" : "/Applications/Obsidian.app"
+        },
+        {
+          "type" : "application",
+          "label" : "",
+          "key" : "s",
+          "value" : "/Applications/Spotify.app"
+        },
+        {
+          "type" : "application",
+          "label" : "",
           "key" : "m",
-          "value" : "/Applications/Messages.app",
+          "value" : "/System/Applications/Mail.app"
+        },
+        {
           "type" : "application",
-          "label" : ""
+          "label" : "",
+          "key" : "w",
+          "value" : "/Applications/WhatsApp.app"
         }
       ],
-      "label" : ""
+      "label" : "Favorites",
+      "key" : "f",
+      "type" : "group"
     },
     {
-      "key" : "r",
-      "type" : "group",
+      "actions" : [
+        {
+          "value" : "/Applications/Ghostty.app",
+          "label" : "",
+          "key" : "g",
+          "type" : "application"
+        },
+        {
+          "value" : "/Applications/iTerm.app",
+          "label" : "",
+          "key" : "i",
+          "type" : "application"
+        },
+        {
+          "value" : "/Applications/WezTerm.app",
+          "label" : "",
+          "key" : "w",
+          "type" : "application"
+        },
+        {
+          "value" : "/System/Applications/Utilities/Terminal.app",
+          "label" : "",
+          "key" : "t",
+          "type" : "application"
+        }
+      ],
+      "label" : "Terminal",
+      "key" : "t",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "label" : "Chrome",
+          "key" : "c",
+          "type" : "application",
+          "value" : "/Applications/Google Chrome.app"
+        },
+        {
+          "label" : "Edge",
+          "key" : "e",
+          "type" : "application",
+          "value" : "/Applications/Microsoft Edge.app"
+        },
+        {
+          "label" : "Zen",
+          "key" : "z",
+          "type" : "application",
+          "value" : "/Applications/Zen Browser.app"
+        },
+        {
+          "label" : "Brave",
+          "key" : "b",
+          "type" : "application",
+          "value" : "/Applications/Brave Browser.app"
+        },
+        {
+          "label" : "Safari",
+          "key" : "s",
+          "type" : "application",
+          "value" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
+        }
+      ],
+      "label" : "Browser",
+      "key" : "b",
+      "type" : "group"
+    },
+    {
       "actions" : [
         {
           "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
@@ -43,81 +145,21 @@
           "label" : ""
         },
         {
-          "label" : "",
-          "key" : "p",
           "value" : "raycast://confetti",
-          "type" : "url"
+          "key" : "p",
+          "type" : "url",
+          "label" : ""
         },
         {
-          "label" : "",
+          "value" : "raycast://extensions/raycast/system/open-camera",
           "key" : "c",
           "type" : "url",
-          "value" : "raycast://extensions/raycast/system/open-camera"
-        }
-      ],
-      "label" : "Raycast"
-    },
-    {
-      "key" : "t",
-      "actions" : [
-        {
-          "type" : "application",
-          "key" : "g",
-          "label" : "",
-          "value" : "/Applications/Ghostty.app"
-        },
-        {
-          "key" : "i",
-          "type" : "application",
-          "value" : "/Applications/iTerm.app",
-          "label" : ""
-        },
-        {
-          "label" : "",
-          "value" : "/Applications/WezTerm.app",
-          "key" : "w",
-          "type" : "application"
-        },
-        {
-          "value" : "/System/Applications/Utilities/Terminal.app",
-          "type" : "application",
-          "label" : "",
-          "key" : "t"
-        }
-      ],
-      "type" : "group",
-      "label" : "Terminal"
-    },
-    {
-      "actions" : [
-        {
-          "type" : "application",
-          "label" : "",
-          "key" : "c",
-          "value" : "/Applications/Google Chrome.app"
-        },
-        {
-          "type" : "application",
-          "label" : "",
-          "key" : "e",
-          "value" : "/Applications/Microsoft Edge.app"
-        },
-        {
-          "type" : "application",
-          "key" : "z",
-          "value" : "/Applications/Zen Browser.app",
-          "label" : ""
-        },
-        {
-          "key" : "s",
-          "value" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app",
-          "type" : "application",
           "label" : ""
         }
       ],
-      "key" : "b",
-      "type" : "group",
-      "label" : "Browser"
+      "label" : "Raycast",
+      "key" : "r",
+      "type" : "group"
     }
   ]
 }
