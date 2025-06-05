@@ -1,171 +1,156 @@
 {
-  "type" : "group",
   "actions" : [
     {
-      "key" : "f",
-      "label" : "Favorites",
-      "type" : "group",
       "actions" : [
         {
           "key" : "g",
           "type" : "application",
-          "label" : "",
           "value" : "/Applications/Ghostty.app"
         },
         {
           "key" : "z",
           "type" : "application",
-          "label" : "",
           "value" : "/Applications/Zed.app"
         },
         {
           "key" : "v",
           "type" : "application",
-          "label" : "",
           "value" : "/Applications/Visual Studio Code.app"
         },
         {
           "key" : "i",
           "type" : "application",
-          "label" : "",
           "value" : "/Applications/iTerm.app"
         },
         {
           "key" : "d",
           "type" : "application",
-          "label" : "",
           "value" : "/Applications/Discord.app"
         },
         {
           "key" : "t",
           "type" : "application",
-          "label" : "",
           "value" : "/Applications/TablePlus.app"
         },
         {
           "key" : "o",
           "type" : "application",
-          "label" : "",
           "value" : "/Applications/Obsidian.app"
         },
         {
           "key" : "s",
           "type" : "application",
-          "label" : "",
           "value" : "/Applications/Spotify.app"
         },
         {
           "key" : "m",
           "type" : "application",
-          "label" : "",
           "value" : "/System/Applications/Mail.app"
         },
         {
           "key" : "w",
           "type" : "application",
-          "label" : "",
           "value" : "/Applications/WhatsApp.app"
         },
         {
           "key" : "c",
           "type" : "application",
-          "label" : null,
           "value" : "/Applications/Google Chrome.app"
         }
-      ]
+      ],
+      "key" : "f",
+      "label" : "Favorites",
+      "type" : "group"
     },
     {
+      "actions" : [
+        {
+          "key" : "g",
+          "type" : "application",
+          "value" : "/Applications/Ghostty.app"
+        },
+        {
+          "key" : "i",
+          "type" : "application",
+          "value" : "/Applications/iTerm.app"
+        },
+        {
+          "key" : "w",
+          "type" : "application",
+          "value" : "/Applications/WezTerm.app"
+        },
+        {
+          "key" : "t",
+          "type" : "application",
+          "value" : "/System/Applications/Utilities/Terminal.app"
+        }
+      ],
       "key" : "t",
       "label" : "Terminal",
-      "type" : "group",
-      "actions" : [
-        {
-          "type" : "application",
-          "value" : "/Applications/Ghostty.app",
-          "label" : "",
-          "key" : "g"
-        },
-        {
-          "type" : "application",
-          "value" : "/Applications/iTerm.app",
-          "label" : "",
-          "key" : "i"
-        },
-        {
-          "type" : "application",
-          "value" : "/Applications/WezTerm.app",
-          "label" : "",
-          "key" : "w"
-        },
-        {
-          "type" : "application",
-          "value" : "/System/Applications/Utilities/Terminal.app",
-          "label" : "",
-          "key" : "t"
-        }
-      ]
+      "type" : "group"
     },
     {
-      "key" : "b",
-      "label" : "Browser",
-      "type" : "group",
       "actions" : [
         {
-          "type" : "application",
           "key" : "c",
           "label" : "Chrome",
+          "type" : "application",
           "value" : "/Applications/Google Chrome.app"
         },
         {
-          "type" : "application",
           "key" : "e",
           "label" : "Edge",
+          "type" : "application",
           "value" : "/Applications/Microsoft Edge.app"
         },
         {
-          "type" : "application",
           "key" : "z",
           "label" : "Zen",
+          "type" : "application",
           "value" : "/Applications/Zen Browser.app"
         },
         {
-          "type" : "application",
           "key" : "b",
           "label" : "Brave",
+          "type" : "application",
           "value" : "/Applications/Brave Browser.app"
         },
         {
-          "type" : "application",
           "key" : "s",
           "label" : "Safari",
+          "type" : "application",
           "value" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
         }
-      ]
+      ],
+      "key" : "b",
+      "label" : "Browser",
+      "type" : "group"
     },
     {
-      "key" : "r",
-      "label" : "Raycast",
-      "type" : "group",
       "actions" : [
         {
-          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
           "key" : "e",
+          "label" : "Emoji Picker",
           "type" : "url",
-          "label" : ""
+          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
         },
         {
-          "value" : "raycast://confetti",
           "key" : "p",
+          "label" : "Confetti",
           "type" : "url",
-          "label" : ""
+          "value" : "raycast://confetti"
         },
         {
-          "value" : "raycast://extensions/raycast/system/open-camera",
           "key" : "c",
+          "label" : "Camera",
           "type" : "url",
-          "label" : ""
+          "value" : "raycast://extensions/raycast/system/open-camera"
         }
-      ]
+      ],
+      "key" : "r",
+      "label" : "Raycast",
+      "type" : "group"
     }
-  ]
+  ],
+  "type" : "group"
 }
