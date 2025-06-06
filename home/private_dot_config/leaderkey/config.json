@@ -56,6 +56,11 @@
           "key" : "c",
           "type" : "application",
           "value" : "/Applications/Google Chrome.app"
+        },
+        {
+          "key" : "f",
+          "type" : "application",
+          "value" : "/Applications/Figma.app"
         }
       ],
       "key" : "f",
